@@ -4,6 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>소상공인 인플루언서 교육 신청 양식</title>
+    
+    <!-- Buzzvil Pixel Code : 연동 완료 후 삭제 및 이동 불가 -->
+    <script async src="https://buzz-js.buzzvil.com/buzzvil-pixel-sdk/buzzvil-pixel.js"></script>
+    <script>
+    window.bzDataLayer = [];
+    function bzq() {window.bzDataLayer.push(arguments);}
+    bzq("init", 628633986691344);
+    </script>
+    <!-- Buzzvil Pixel Code End -->
+    
     <style>
         body {
             font-family: 'Noto Sans', sans-serif;
@@ -340,6 +350,10 @@
             e.preventDefault();
             fetch(scriptURL, { method: 'POST', body: new FormData(form)})
                 .then(response => {
+
+                    // Buzzvil Complete Code : 연동 완료 후 삭제 및 이동 불가
+                    window.bzq("track", { action: "bz_action_complete"});
+
                     document.getElementById('applicationForm').style.display = 'none';
                     document.getElementById('confirmationMessage').style.display = 'block';
                 })
